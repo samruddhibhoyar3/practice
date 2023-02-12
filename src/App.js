@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import './App.css'
+import { Button } from '@material-ui/core'
 
 function App() {
+  const [color, setColor] = useState('primary')
+  function customMe() {
+    setColor('secondary')
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div className='h1'>react mui</div>
+      <button>click on me</button>
+      <Button>click click using material-ui</Button>
+      <Button color='primary' size='small'>
+        colour change material -ui
+      </Button>
+      <Button
+        variant='outlined'
+        onClick={() => {
+          customMe()
+        }}
+      >
+        change
+      </Button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
